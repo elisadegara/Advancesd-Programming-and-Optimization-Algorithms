@@ -71,6 +71,3 @@ Your code should implement function sort_files() which returns ordered list of t
 ['P1.txt', 'P2.txt', 'P3.txt', 'P10.txt', 'P4.txt', 'P13.txt', 'P14.txt', 'P9.txt', 'P15.txt', 'P7.txt', 'P12.txt', 'P11.txt', 'P5.txt', 'P6.txt', 'P8.txt'] You should also define and use function comp_dist(file1, file2) which returns the Earth-mover distance between file1 and file2. I may want to access it during the grading process, especially if your output is not completely correct.
 Make sure your code never breaks down. If you know that it cannot handle e.g. P10.txt, skip this file and don't include it in the output. This way, you will not get a full score, but you will still get points for the partial solution.
 
-Before submission, always try your code in vocareum using "Run" button. Incorrect output format, syntax and indentation errors, etc will result into 0 points.
-
-Firstly we define a function which given two files calculated the EMD distance between them. We create a graph with a sink node 's' and a tank node 't' with an additional 'jolly edge' which solves some rounding problems which will would have emerged later
