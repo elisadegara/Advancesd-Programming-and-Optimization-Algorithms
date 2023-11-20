@@ -1,0 +1,50 @@
+import pulp
+from pulp import *
+
+retval = {}
+retval['x1'] = None
+retval['x2'] = None
+retval['x3'] = None
+retval['x4'] = None
+retval['x5'] = None
+retval['x6'] = None
+retval['obj'] = None
+
+
+model = LpProblem("Maximization", LpMaximize)
+
+x1 = LpVariable("x1", 0, 1) 
+x2 = LpVariable("x2", 0, 1)
+x3 = LpVariable("x3", 0, 1) 
+x4 = LpVariable("x4", 0, 1) 
+x5 = LpVariable("x5", 0, 1)
+x6 = LpVariable("x6", 0, 1) 
+x0 = LpVariable("x0")
+
+
+model += x0
+
+model += x0 <= -2*x2+x3+x4+x5+x6
+model += x0 <= 2*x1-2*x3+x4+x5+x6
+model += x0 <= -x1+2*x2-2*x4+x5+x6
+model += x0 <= -x1-x2+2*x3-2*x5+x6
+model += x0 <= -x1-x2-x3+2*x4-2*x6
+model += x0 <= -x1-x2-x3-x4+2*x5
+model += x1+x2+x3+x4+x5+x6 == 1
+model += x1 >= 0
+model += x2 >= 0
+model += x3 >= 0
+model += x4 >= 0
+model += x5 >= 0
+model += x6 >= 0
+
+model.solve()
+retval['x1'] = x1.varValue
+retval['x2'] = x2.varValue
+retval['x3'] = x3.varValue
+retval['x4'] = x4.varValue
+retval['x5'] = x5.varValue
+retval['x6'] = x6.varValue
+retval['obj'] = value(model.objective)
+
+print(retval.values())
