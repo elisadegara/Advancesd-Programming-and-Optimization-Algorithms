@@ -38,7 +38,7 @@ representatives from company 1: 1.0 representatives from company 2: 2.0 represen
 <br/><br/>
 
 
-
+#
 
 ASSIGNMENT 2
 Consider a set of pictures from 360° camera mounted inside a merry-go-round. They were taken at night and only one seat is visible which emits light – the seat in the shape of a jelly fish. We know that the merry-go-round rotates clockwise and that all the pictures were taken during a single cycle of merry-go-round. Given that the first picture is P1, your task is to sort the rest in the chronological order. Assume that the move of jelly fish is monotonous in horizontal direction, i.e., it always moves in clockwise direction, never backwards.
@@ -70,7 +70,7 @@ Make sure your code never breaks down. If you know that it cannot handle e.g. P1
 
 
 <br/><br/>
-
+#
 
 ASSIGNMENT 3
 
