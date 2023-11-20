@@ -1,11 +1,11 @@
 # Advanced-Programming-and-Optimization-Algorithms
 Solutions to programming assignments 
 
-
+\\
 
 ASSIGNMENT 1 
 
-Part 1: ("lp assignment 1, vocareum version")
+Part 1:
 
 Solve the following program:
 
@@ -14,11 +14,8 @@ subject to: x ≥ -10 y ≤ 10 3x + 2y ≤ 10 12x + 14y ≥ -12.5 2x + 3y ≥ 3 
 
 Optimal solution: x = 0.1 y = -2.3 Objective value: 100.1214 Tight constraints: 1 2 4 So, your program should find the optimal solution, determine its objective value, and identify the tight constraints. 
 
-
-
-
-
-Part 2: ("lp assignment 2, vocareum version")
+\\
+Part 2: 
 
 Find an optimal mixed strategy of the following game: Both players choose independently a single integer from 1 to 6. Then, the numbers are compared:
 If they are equal, there is a draw If they differ by 1, the player who played the smaller number gets 2EUR from the other player If they differ by ≥2, the player who played the larger number gets 1EUR from the other player Note that the game is symmetric and the same strategy is optimal for both players. Required output example:
@@ -29,7 +26,7 @@ x1: 0.2 x2: 0.1 x3: 0.2 x4: 0.1 x5: 0.2 x6: 0.2
 
 
 
-Part 3: ("lp assignment 3, vocareum version")
+Part 3: 
 
 On some imaginary island, there are 69 companies and there are bilateral contracts between them. The monarch of the island would like to inspect validity of each of these contracts during a single large event. The monarch requires two representatives to represent each contract relationship (they can be both from the same party of the contract or each from a different one). This is of course satisfied by each company sending a single representative, which would require involvement of 69 representatives in total. However, the companies want to find a solution which minimizes the total number of representatives who need to attend the event.
 
@@ -45,7 +42,7 @@ representatives from company 1: 1.0 representatives from company 2: 2.0 represen
 
 
 
-ASSIGNMENT 2 ("lp assignment 2_definitivo")
+ASSIGNMENT 2
 Consider a set of pictures from 360° camera mounted inside a merry-go-round. They were taken at night and only one seat is visible which emits light – the seat in the shape of a jelly fish. We know that the merry-go-round rotates clockwise and that all the pictures were taken during a single cycle of merry-go-round. Given that the first picture is P1, your task is to sort the rest in the chronological order. Assume that the move of jelly fish is monotonous in horizontal direction, i.e., it always moves in clockwise direction, never backwards.
 
 Input files: text files, each of them with 10 rows and 80 columns representing the brightness level in the given parts of the picture. Jelly fish can be recognized by high brightness (value 1 to 9) on a black background (value 0).
@@ -77,7 +74,7 @@ Make sure your code never breaks down. If you know that it cannot handle e.g. P1
 
 
 
-ASSIGNMENT 3: ("Assignment_3 (versione finale VOCAREUM)")
+ASSIGNMENT 3
 
 Use the PuLP library https://pypi.org/project/PuLP/ to solve the following problems. Documentation to PuLP can be found here: https://coin-or.github.io/pulp/main/index.html
 
