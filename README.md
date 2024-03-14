@@ -143,11 +143,13 @@ The objective is to minimize the total fuel consumption of the vehicle over time
 
 
 _Formulating the problem as a convex program_
+
 It is almost convex, just one set of constraints is problematic.
 
 Hint: Try to relax it, only one inequality is important, but provide an explanation (e.g. in the comments of your code) of why your formulation is equivalent.
 
 _Task 1: Solve your convex program with cvxpy library (20 points)_
+
 Link to the library: https://www.cvxpy.org/. It is installed in vocareum. Implement it in function car_with_battery()
 
 _Task 2: comparison with a battery-less car (5 points)_
@@ -156,6 +158,7 @@ Change E_battmax to 0 and solve your program again to see how does it affect the
 Hint: Maybe you can prepare a single function which takes the value E_battmax as a parameter and solves your convex program based on this parameter. You can then call it from both functions (with/without battery) with the desired parameter value.
 
 _Task 3: handle glitches (5 points)_
+
 You may find out that although your program is equivalent, the solution found by the solver does not fulfill all the relaxed constraints with equality. This might happen during long periods of breaking when there are a lot of opportunities to charge the battery and sometimes the solver may decide to waste part of the power available to charge the battery (because it may charge it fully in the following time steps). There are two options for how to proceed:
 - Postprocess the solution to get another solution with the same objective value where the relaxed constraints are preserved with equality. Such a solution must exist since your program is equivalent to the original one. Hint: just move all the power from motor/generator to the battery and, if the battery is full, move it to the friction break.
 - Add a small term to the objective which will discourage such a situation: for every t = 1, ..., T, you can add a term ε ⋅ max{0, -P_mg(t)} for some small positive ε in order to discourage absorbing power by the motor/generator if it is not going to be used for charging the battery (because it is cheaper to absorb the power using the friction break).
@@ -163,7 +166,9 @@ You may find out that although your program is equivalent, the solution found by
 In case you decide to modify the objective, make sure the power consumption achieved by your program is similar to the power consumption achieved by the program with the original objective (with your choice of ε, they should not differ by more than 0.1).
 
 _Data_
+
 The template of main.py contains a code that generates data for you. The array Preq contains power requirements in all time steps. Below the definition of Preq, there are the bounds specifying the parameters of the engine, motor/generator, the capacity of the battery, coefficient η of the inefficiency of charging/discharging, and coefficient γ in the objective function.
 
 _A note on precision_
+
 LP solvers which we used so far always provided a precise feasible solution. This is not always the case with the solvers for convex optimization. If you want better precision, see "eps" parameters in the Solver options. However, default values are good enough for the purpose of this assignment.
