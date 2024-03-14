@@ -41,6 +41,7 @@ representatives from company 1: 1.0 representatives from company 2: 2.0 represen
 #
 
 __ASSIGNMENT 2__
+
 Consider a set of pictures from 360° camera mounted inside a merry-go-round. They were taken at night and only one seat is visible which emits light – the seat in the shape of a jelly fish. We know that the merry-go-round rotates clockwise and that all the pictures were taken during a single cycle of merry-go-round. Given that the first picture is P1, your task is to sort the rest in the chronological order. Assume that the move of jelly fish is monotonous in horizontal direction, i.e., it always moves in clockwise direction, never backwards.
 
 Input files: text files, each of them with 10 rows and 80 columns representing the brightness level in the given parts of the picture. Jelly fish can be recognized by high brightness (value 1 to 9) on a black background (value 0).
@@ -131,7 +132,7 @@ The vehicle has a combustion engine, a motor/generator connected to a battery, a
 P_req(t) is positive when the wheels need power, e.g. vehicle is ascending a hill or accelerating: power for the wheels needs to be provided by the combustion engine and/or the motor/generator which extracts the power stored in the battery. When P_req(t) is negative (e.g. because vehicle is descending a hill), the power is extracted by the motor/generator which can store it in the battery and/or by the friction break.
 
 Power is conserved, i.e., at each time t, we have P_req(t) = P_eng(t) + P_mg(t) - P_br(t)
-where 0 <= P_eng(t) <_ P_engmax is power produced by the combustion engine, Pmgmin <= P_mg(t)<= Pmgmax is power produced by the motor/generator (can be also negative if motor/generator absorbs power to charge the battery) and P_br(t) >= 0 is the power absorbed by the friction break. See data below for the definition of the constants.
+where 0 <= P_eng(t) <= P_engmax is power produced by the combustion engine, Pmgmin <= P_mg(t)<= Pmgmax is power produced by the motor/generator (can be also negative if motor/generator absorbs power to charge the battery) and P_br(t) >= 0 is the power absorbed by the friction break. See data below for the definition of the constants.
 
 For every t = 1, ..., T + 1, the energy E(t) in the battery has to be between 0 and E_battmax
  representing the power stored in empty and full battery respectively. Moreover, we need to take into account the charging and discharging of the battery: we have that for t = 1, ..., T, E(t + 1) = E(t) - P_mg(t) - η|P_mg(t)|.
